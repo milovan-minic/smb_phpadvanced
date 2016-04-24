@@ -9,4 +9,5 @@ nbproject
 .phalcon
 atlassian-ide-plugin.xml
 /vendor
+/logs
 composer.phar
