@@ -1,2 +1,0 @@
-[Sat Apr 23 14:47:02.797535 2016] [:error] [pid 1981] [client 127.0.0.1:56659] PHP Parse error:  syntax error, unexpected '<' in /var/www/phpadvanced/index.php on line 5
-[Sat Apr 23 14:47:50.003027 2016] [:error] [pid 3344] [client 127.0.0.1:57209] PHP Parse error:  syntax error, unexpected '<' in /var/www/phpadvanced/index.php on line 5
