@@ -9,5 +9,6 @@ nbproject
 .phalcon
 atlassian-ide-plugin.xml
 /vendor
-/logs
+/logs/access.log
+/logs/error.log
 composer.phar
