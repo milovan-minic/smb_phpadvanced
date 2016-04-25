@@ -67,62 +67,56 @@ $chemistry = new Book('chemistry', 999, 'Advanced Chemistry');
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Book Prices</title>
-    <meta charset="UTF-8">
-    <style>
-        table{
-            border-collapse: collapse;
-            width: 50%;
-        }
-        table, th, td {
-            border: 1px solid aqua;
-        }
-        th{
-            background-color: aquamarine;
-            color: darkgray;
-        }
-        tr{
-            background-color: darkgray;
-        }
-        tr:nth-child(odd){
-            background-color: aquamarine;
-        }
-    </style>
-</head>
-<body>
-<table>
-    <tr>
-        <th>Subject</th>
-        <th>Price</th>
-        <th>Title</th>
-    </tr>
-    <?php
-    foreach (Book::$instances as $instance) {
-        echo '<tr>';
-        echo '<td>' . $instance->getSubject() . '</td>';
-        echo '<td>' . $instance->getPrice() . '</td>';
-        echo '<td>' . $instance->getTitle() . '</td>';
-        echo '</tr>';
-    }
-    ?>
-</table>
-<p>Nakon pojeftinjenja od 10%, cene su sledeće</p>
-<table>
-    <tr>
-        <th>Subject</th>
-        <th>Price</th>
-        <th>Title</th>
-    </tr>
-    <?php
-    foreach (Book::$instances as $instance) {
-        echo '<tr>';
-        echo '<td>' . $instance->getSubject() . '</td>';
-        echo '<td>' . $instance->getPrice() * 0.9 . '</td>';
-        echo '<td>' . $instance->getTitle() . '</td>';
-        echo '</tr>';
-    }
-    ?>
-</table>
-</body>
+    <head>
+        <title>Book Prices</title>
+        <meta charset="UTF-8">
+        <style>
+            table{
+                font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 80%;
+            }
+            table, th, td {
+                border: 2px solid cornflowerblue;
+            }
+            tr:nth-child(even){
+                background-color: lightskyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th width="33.3%">Naziv objekta</th>
+                <th width="33.3%">Vrednost atributa <i>price</i></th>
+                <th width="33.4%">Vrednost atributa <i>title</i></th>
+            </tr>
+            <?php
+                foreach (Book::$instances as $instance) {
+                    echo '<tr>';
+                    echo '<td>' . $instance->getSubject() . '</td>';
+                    echo '<td>' . $instance->getPrice() . '</td>';
+                    echo '<td>' . $instance->getTitle() . '</td>';
+                    echo '</tr>';
+                }
+            ?>
+        </table>
+        <p>Nakon pojeftinjenja od 10%, cene su sledeće</p>
+        <table>
+            <tr>
+                <th width="33.3%">Naziv objekta</th>
+                <th width="33.3%">Vrednost atributa <i>price</i></th>
+                <th width="33.4%">Vrednost atributa <i>title</i></th>
+            </tr>
+            <?php
+                foreach (Book::$instances as $instance) {
+                    echo '<tr>';
+                    echo '<td>' . $instance->getSubject() . '</td>';
+                    echo '<td>' . $instance->getPrice() * 0.9 . '</td>';
+                    echo '<td>' . $instance->getTitle() . '</td>';
+                    echo '</tr>';
+                }
+            ?>
+        </table>
+    </body>
 </html>
