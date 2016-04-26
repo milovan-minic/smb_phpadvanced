@@ -61,8 +61,13 @@ class Book
 }
 
 $math = new Book('math', 1450, 'Algebra');
+//Book::$instances[] = ($math);
+
 $physics = new Book('physics', 1290, 'Physics for High School');
+//Book::$instances[] = ($physics);
+
 $chemistry = new Book('chemistry', 999, 'Advanced Chemistry');
+//Book::$instances[] = ($chemistry);
 
 ?>
 <!DOCTYPE html>
