@@ -59,8 +59,8 @@ class Book
         $this->_title = $title;
     }
 }
-
-$math = new Book('math', 1450, 'Algebra');
+// TODO: Ispraviti kod na osnovu primera dole
+$niz[] = new Book('math', 1450, 'Algebra');
 //Book::$instances[] = ($math);
 
 $physics = new Book('physics', 1290, 'Physics for High School');
