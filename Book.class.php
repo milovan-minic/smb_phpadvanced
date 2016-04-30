@@ -1,23 +1,21 @@
 <?php
 
+// $objekti cuva sve kreirane objekte u nizu kako bi se kasnije lakse iteriralo kroz sve clanove niza
+$objekti = array();
+
 class Book
 {
     private $_subject;
     private $_price;
     private $_title;
 
-    static $instances = array();
-
     /**
-     * @param $subject
-     * @param $price
-     * @param $title
+     * @param string $subject
+     * @param int $price
+     * @param string $title
      */
     public function __construct($subject, $price, $title)
     {
-        // Dodavanje informacije o svakom instanciranom objektu
-        Book::$instances[] = $this;
-
         $this->_subject = $subject;
         $this->_price = $price;
         $this->_title = $title;
@@ -59,15 +57,9 @@ class Book
         $this->_title = $title;
     }
 }
-// TODO: Ispraviti kod na osnovu primera dole
-$niz[] = new Book('math', 1450, 'Algebra');
-//Book::$instances[] = ($math);
-
-$physics = new Book('physics', 1290, 'Physics for High School');
-//Book::$instances[] = ($physics);
-
-$chemistry = new Book('chemistry', 999, 'Advanced Chemistry');
-//Book::$instances[] = ($chemistry);
+$objekti[] = new Book('math', 1450, 'Algebra');
+$objekti[] = new Book('physics', 1290, 'Physics for High School');
+$objekti[] = new Book('chemistry', 999, 'Advanced Chemistry');
 
 ?>
 <!DOCTYPE html>
@@ -97,11 +89,11 @@ $chemistry = new Book('chemistry', 999, 'Advanced Chemistry');
                 <th width="33.4%">Vrednost atributa <i>title</i></th>
             </tr>
             <?php
-                foreach (Book::$instances as $instance) {
+                foreach ($objekti as $objekat) {
                     echo '<tr>';
-                    echo '<td>' . $instance->getSubject() . '</td>';
-                    echo '<td>' . $instance->getPrice() . '</td>';
-                    echo '<td>' . $instance->getTitle() . '</td>';
+                    echo '<td>' . $objekat->getSubject() . '</td>';
+                    echo '<td>' . $objekat->getPrice() . '</td>';
+                    echo '<td>' . $objekat->getTitle() . '</td>';
                     echo '</tr>';
                 }
             ?>
@@ -114,11 +106,11 @@ $chemistry = new Book('chemistry', 999, 'Advanced Chemistry');
                 <th width="33.4%">Vrednost atributa <i>title</i></th>
             </tr>
             <?php
-                foreach (Book::$instances as $instance) {
+                foreach ($objekti as $objekat) {
                     echo '<tr>';
-                    echo '<td>' . $instance->getSubject() . '</td>';
-                    echo '<td>' . $instance->getPrice() * 0.9 . '</td>';
-                    echo '<td>' . $instance->getTitle() . '</td>';
+                    echo '<td>' . $objekat->getSubject() . '</td>';
+                    echo '<td>' . $objekat->getPrice() * 0.9 . '</td>';
+                    echo '<td>' . $objekat->getTitle() . '</td>';
                     echo '</tr>';
                 }
             ?>
