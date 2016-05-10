@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Book.class.php';
+require_once 'Book1.class.php';
 
-class Novel extends Book
+class Novel extends Book1
 {
     private $_publisher;
 

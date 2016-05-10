@@ -3,7 +3,7 @@
 // $objekti cuva sve kreirane objekte u nizu kako bi se kasnije lakse iteriralo kroz sve clanove niza
 $objekti = array();
 
-class Book
+class Book1
 {
     private $_subject;
     private $_price;
@@ -57,9 +57,9 @@ class Book
         $this->_title = $title;
     }
 }
-$objekti[] = new Book('math', 1450, 'Algebra');
-$objekti[] = new Book('physics', 1290, 'Physics for High School');
-$objekti[] = new Book('chemistry', 999, 'Advanced Chemistry');
+$objekti[] = new Book1('math', 1450, 'Algebra');
+$objekti[] = new Book1('physics', 1290, 'Physics for High School');
+$objekti[] = new Book1('chemistry', 999, 'Advanced Chemistry');
 
 ?>
 <!DOCTYPE html>
