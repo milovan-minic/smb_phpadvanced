@@ -9,12 +9,17 @@ if(isset($_POST) &&
     $idk = $_POST['idk'];
     $naslov = $_POST['naslov'];
     $oblast = $_POST['oblast'];
+    $izdavac = $_POST['izdavac'];
+    $pisac = $_POST['pisac'];
+    $tiraz = $_POST['tiraz'];
 
     if($idk != '' &&
         $naslov != '') {
 
-        $novaKnjiga = new Book($idk, $naslov, $oblast);
+        $novaKnjiga = new Book($idk, $naslov, $oblast, $izdavac, $pisac, $tiraz);
         $novaKnjiga->insertBook();
+        $novaKnjiga->insertKI();
+        $novaKnjiga->insertKP();
     } else {
         echo 'Polja su prazna' . '<br />';
         echo '<a href="NewBook.php">Pokusajte ponovo ovde</a>';

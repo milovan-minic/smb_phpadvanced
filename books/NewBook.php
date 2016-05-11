@@ -17,24 +17,25 @@
             ID Knjge: <input type="text" name="idk"> * <br />
             Naslov: <input type="text" name="naslov"> * <br />
             Oblast: <input type="text" name="oblast"><br />
-            Izdavac:    <select>
+            Izdavac:    <select name="izdavac">
                             <?php
                             $izdavaci = $kontrola->izdavacDropDown();
 
                             while($izdavac = $izdavaci->fetch_assoc()){
-                                echo '<option value="' . $izdavac["Naziv"] . '">' . $izdavac["Naziv"] . '</option>';
+                                echo '<option value="' . $izdavac["idI"] . '">' . $izdavac["Naziv"] . '</option>';
                             }
                             ?>
                         </select><br />
-            Pisac:      <select>
+            Pisac:      <select name="pisac">
                             <?php
                             $pisci = $kontrola->autorDropDown();
 
                             while($pisac = $pisci->fetch_assoc()){
-                                echo '<option value="' . $pisac["Ime"] . '">' . $pisac["Ime"] . '</option>';
+                                echo '<option value="' . $pisac["idP"] . '">' . $pisac["Ime"] . '</option>';
                             }
                             ?>
                         </select><br />
+            Tiraz: <input type="number" name="tiraz"><br />
             <input type="submit" value="Unesi">
             <input type="reset" value="Obrisi podatke">
         </form>

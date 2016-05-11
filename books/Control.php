@@ -9,7 +9,7 @@ class Control
     {
         $konekcija = new Connection();
 
-        $listaIzdavaca = "SELECT Naziv FROM I";
+        $listaIzdavaca = "SELECT idI, Naziv, Status, Drzava FROM I";
 
         $res = $konekcija->upit($listaIzdavaca);
 
@@ -26,7 +26,7 @@ class Control
     {
         $konekcija = new Connection();
 
-        $listaPisaca = "SELECT Ime FROM P";
+        $listaPisaca = "SELECT idP, Ime, BrNaslova, Drzava FROM P";
 
         $res = $konekcija->upit($listaPisaca);
 
