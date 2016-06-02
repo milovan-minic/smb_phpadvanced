@@ -8,7 +8,7 @@ $explodedArray = explode('.', $_FILES['file']['name']);
 $extension = end($explodedArray);
 
 if (
-        ($_FILES['file']['type'] = 'application/pdf') &&
+        ($_FILES['file']['type'] == 'application/pdf') &&
         (($_FILES['file']['size'] < 500000) && (in_array($extension, $allowedExtensions)))
     ) {
     if ($_FILES['file']['error'] > 0) {
